@@ -1,0 +1,109 @@
+/* Colores de Stardust */
+:root {
+  --azul: #1D1C3D;
+  --celeste: #4AACCE;
+  --amarillo: #F2ED51;
+  --blanco: #ffffff;
+  --fondo: #f7f7f4;
+  /* Cambia esta variable si quieres otra tipografía SOLO en la portada */
+  --fuente-portada: Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--fondo); color: var(--azul); font-family: Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+
+.encabezado {
+  padding: 12px 6%; background: var(--azul); color: var(--blanco);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  animation: aparecer .7s ease;
+}
+.marca img { display: block; width: 90px; height: 55px; object-fit: contain; }
+.menu { display: flex; flex-wrap: wrap; gap: 6px; }
+.menu a { padding: 9px 11px; font-size: .9rem; transition: .3s; }
+.menu a:hover { color: var(--azul); background: var(--amarillo); }
+
+.portada {
+  padding: 55px 8%; background: var(--celeste); display: grid;
+  grid-template-columns: 1fr 1fr; align-items: center; gap: 40px;
+  animation: entrar .8s ease;
+}
+.eyebrow { margin: 0 0 12px; font-size: .8rem; font-weight: bold; }
+.portada h1 { font-family: var(--fuente-portada); margin: 0; font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1; }
+.portada h1 span { color: var(--blanco); }
+.portada-texto > p:not(.eyebrow) { line-height: 1.6; }
+.boton { display: inline-block; margin-top: 10px; padding: 12px 16px; background: var(--amarillo); border: 2px solid var(--azul); font-weight: bold; transition: .3s; }
+.boton:hover { background: var(--blanco); }
+.sticker { display: block; margin-top: 18px; font-size: .85rem; }
+.made-love { display: inline-block; margin: 16px 0 0 10px; padding: 9px 17px; border: 2px solid var(--azul); border-radius: 50%; background: var(--amarillo); color: var(--azul); font-size: .8rem; transform: rotate(-6deg); }
+.portada-foto { min-height: 290px; display: grid; place-items: center; border: 2px dashed var(--azul); background: rgba(255,255,255,.25); }
+.marco-label { padding: 10px; background: var(--amarillo); text-align: center; font-size: .85rem; }
+.cruz { position: absolute; display: none; }
+.decoracion { display: none; }
+
+.seccion { padding: 60px 8%; }
+.titulo-seccion { text-align: center; margin-bottom: 28px; }
+.titulo-seccion h2 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); }
+.titulo-seccion h2 span { color: var(--celeste); }
+.rejilla { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.tarjeta { padding: 12px; border: 2px solid var(--azul); background: var(--blanco); transition: transform .25s; }
+.tarjeta:hover { transform: translateY(-4px); }
+.tarjeta-amarilla { background: var(--amarillo); }
+.tarjeta-celeste { background: var(--celeste); }
+.foto-producto { height: 220px; overflow: hidden; background: var(--blanco); }
+.foto-producto img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .3s; }
+.tarjeta:hover .foto-producto img { transform: scale(1.05); }
+.numero { margin: 14px 0 6px; font-size: .75rem; }
+.tarjeta h3 { margin: 0 0 7px; font-size: 1.2rem; }
+.tarjeta > p:last-child { font-size: .92rem; line-height: 1.5; }
+
+.accesorios { background: var(--amarillo); }
+.titulo-lado { display: flex; align-items: end; justify-content: space-between; gap: 20px; text-align: left; }
+.titulo-lado > p { max-width: 260px; line-height: 1.5; }
+.accesorio:nth-child(2) { background: var(--celeste); }
+
+.creadoras { padding: 60px 8%; background: var(--azul); color: var(--blanco); }
+.creadoras .titulo-seccion h2 span { color: var(--amarillo); }
+.creadoras-grid { max-width: 760px; margin: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.flip-card { height: 250px; perspective: 900px; }
+.flip-interior { position: relative; width: 100%; height: 100%; transition: transform .6s; transform-style: preserve-3d; }
+.flip-card:hover .flip-interior { transform: rotateY(180deg); }
+.cara { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px solid var(--amarillo); backface-visibility: hidden; }
+.frente { background: var(--celeste); color: var(--azul); }
+.frente-dos { background: var(--amarillo); }
+.frente p { font-size: .8rem; font-weight: bold; }
+.frente h3 { margin: 0; font-size: 1.5rem; }
+.estrella-grande { font-size: 2.5rem; }
+.girar { margin-top: 16px; font-size: .8rem; }
+.reverso { transform: rotateY(180deg); background: var(--blanco); color: var(--azul); }
+.reverso h3 { margin: 6px 0; }
+.reverso p:not(.eyebrow) { line-height: 1.5; }
+.reverso > span { font-size: 1.5rem; }
+.reverso-amarillo { background: var(--amarillo); }
+
+footer { padding: 24px 8% 0; background: var(--celeste); }
+.contacto-caja { max-width: 760px; margin: auto; padding-bottom: 22px; display: grid; grid-template-columns: 1.5fr .5fr; align-items: center; gap: 18px; }
+.contacto-texto h2 { margin: 0 0 8px; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+.contacto-texto > p:not(.eyebrow) { line-height: 1.4; font-size: .9rem; margin: 7px 0; }
+.logo-contacto { width: 92px; min-height: 62px; justify-self: center; padding: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border: 1px dashed var(--azul); background: rgba(255,255,255,.25); text-align: center; }
+.logo-contacto span { font-size: .48rem; line-height: 1.1; }.logo-contacto small { font-size: .48rem; line-height: 1.1; }
+.pie-final { padding: 16px 0; border-top: 1px solid var(--azul); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: .8rem; }
+
+@keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+@keyframes entrar { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 760px) {
+  .encabezado { flex-direction: column; }
+  .menu { justify-content: center; }
+  .menu a { padding: 8px; font-size: .8rem; }
+  .portada { grid-template-columns: 1fr; padding: 40px 7%; }
+  .portada-foto { min-height: 230px; }
+  .seccion, .creadoras { padding: 45px 7%; }
+  .rejilla { grid-template-columns: 1fr; }
+  .foto-producto { height: 250px; }
+  .titulo-lado { display: block; text-align: center; }
+  .titulo-lado > p { margin: 10px auto 0; }
+  .creadoras-grid, .contacto-caja { grid-template-columns: 1fr; }
+  .creadoras-grid { max-width: 380px; }
+  .pie-final { justify-content: center; text-align: center; }
+}
